@@ -58,4 +58,4 @@ async function startSending(link) {
   }
 }
 
-startSending(" ? ");
+startSending(webhookURL);
